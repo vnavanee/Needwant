@@ -1,0 +1,8 @@
+{
+"name":"Subliminally",
+"description":"Your wants and needs",
+"version": "0.0.1",
+"private" : true,
+"dependencies" : { "express" : "3.3.x"
+}
+}

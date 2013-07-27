@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 = title
+    #needwants
+      - each needwant in needwants
+        div.needwant
+          div.created_at = needwant.created_at
+          div.ntitle = needwant.ntitle
+          div.need = needwant.need
+          div.want = needwant.want
+       a(href="/needwant/new")!= "Add Your Needs and Wants"

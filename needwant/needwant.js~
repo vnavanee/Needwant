@@ -1,0 +1,17 @@
+var Db =require('mongodb').Db;
+va Connection = require('mongodb').Connection;
+var Server = require('mongodb').Server;
+var BSON = require('mongodb').BSON;
+var objectID = require('mongodb').ObjectID;
+
+NeedWaProvider = function(host, port) {
+this.db = new Db('node-mongo-needwants', new Server(host, port, {sage:false}, {auto_reconnect:true}, {}));
+this.db.open(function(){});
+};
+
+NeedWaProvider.prototype.getCollection = function(callback) {
+this.db.collection('employees', function(error, neewan) {
+if(error) callback(error);
+else callback(null, neewan);
+});
+};
