@@ -1,5 +1,5 @@
 var Db =require('mongodb').Db;
-va Connection = require('mongodb').Connection;
+var Connection = require('mongodb').Connection;
 var Server = require('mongodb').Server;
 var BSON = require('mongodb').BSON;
 var objectID = require('mongodb').ObjectID;
@@ -28,7 +28,7 @@ else callback(null, results)
 });
 };
 
-NeedWaProvider.prototype.save = function(employees, callback) {
+NeedWaProvider.prototype.save = function(needwants, callback) {
 this.getCollection(function(error, neewan) {
 if(error) callback(error)
 else {

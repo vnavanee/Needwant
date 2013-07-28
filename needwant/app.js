@@ -33,21 +33,21 @@ if ('development' == app.get('env')) {
 
 var needWaProvider = new NeedWaProvider('localhost', 27017);
 
-app.get('/', routes.index);
+//app.get('/', routes.index);
 app.get('/users', user.list);
 
-app.get('/all',function(req, res) {
-needWaProvider.findAll(function(error, results) {
+app.get('/',function(req, res) {
+needWaProvider.findAll(function(error, neewans) {
 res.render('index', {
-ntitle: 'Needs and Wants',
-needswants:results
+title: 'Needs and Wants',
+needwants:neewans
 });
 });
 });
 
-app.get('needwant/new', function(req, res) {
-res.render('needwant_new', {
-ntitle: 'New NeedWant'
+app.get('/needwant/new', function(req, res) {
+res.render('new_needwant', {
+title: 'New NeedWant'
 });
 });
 

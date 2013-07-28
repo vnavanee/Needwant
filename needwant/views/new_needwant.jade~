@@ -1,0 +1,20 @@
+extends layout
+
+
+block content
+  h1=title
+  div.newneedwant
+    form(method="post")
+      div
+        div
+          span.label  Title :
+          input(type="text", name="title", id="editNeedWantTitle")
+        div
+          span.label  Need  :
+          input(type="text", name="need", id="editNeed")
+        div
+          span.label  Want  :
+          input(type="text", name="want", id="editWant")
+        div#editNeedWantSubmit
+          input(type="submit", value="Share")
+  a(href="/all")!= "List of Wants and Needs"          
