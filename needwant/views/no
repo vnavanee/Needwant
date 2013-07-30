@@ -1,0 +1,25 @@
+extends layout
+
+
+block content
+  h1=title
+  div.newneedwant
+    form(method="post", ng-submit="submit()", //-ng-controller="Ctrl")
+      div
+        div
+          span.label  Title :
+          input(type="text", name="ntitle", id="editNeedWantTitle")
+        div
+          span.label  Need  :
+          input(type="text", ng-model="need", name="need", id="editNeed")
+             
+        div
+          span.label  Want  :
+          input(type="text", ng-model ="want", name="want", id="editWant")
+        h2="Your need and want {{need}} {{want}}"    
+        div#editNeedWantSubmit
+          input(type="submit", id="submit", value="Share")
+    
+      
+      
+      a(href="/")!= "List of Wants and Needs"          

@@ -4,17 +4,22 @@ extends layout
 block content
   h1=title
   div.newneedwant
-    form(method="post")
-      div
+    form(method="post" )
+     
         div
           span.label  Title :
           input(type="text", name="ntitle", id="editNeedWantTitle")
         div
           span.label  Need  :
-          input(type="text", name="need", id="editNeed")
+          input(type="text", ng-model="need", name="need", id="editNeed")
+             
         div
-          span.label  Want  :
-          input(type="text", name="want", id="editWant")
-        div#editNeedWantSubmit
-          input(type="submit", value="Share")
-  a(href="/")!= "List of Wants and Needs"          
+            span.label  Want  :
+            input(type="text", ng-model ="want", name="want", id="editWant")
+            
+        button(ng-click="save()", class="btn btn-primary")="Share" 
+    
+    p      
+         a(href="/")!= "List of Wants and Needs"          
+    div
+       h2 Your need -- {{need}} and want -- {{want}} are ready to be planned, shared and understood
